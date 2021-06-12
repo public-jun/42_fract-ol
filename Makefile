@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/06/12 22:30:43 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/06/12 23:08:29 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,10 @@ $(NAME): $(OBJCS)
 		$(MAKE) -C $(MLX_DIR)
 		cp $(MLX_DIR)/libmlx_Linux.a .
 		$(CC) $(CFLAGS) $(OBJCS) -L. -Lminilibx-linux -lmlx_Linux $(LIBS) -lm $(LIBFT_LIB) -I $(INCLUDE) -o $(NAME)
+
+.c.o:
+	$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
+
 clean:
 		$(MAKE) -C $(LIBFT_DIR) clean
 		$(MAKE) -C $(MLX_DIR) clean
