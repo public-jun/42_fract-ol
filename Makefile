@@ -5,12 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/27 16:49:55 by jnakahod          #+#    #+#              #
-#    Updated: 2021/05/09 16:50:39 by jnakahod         ###   ########.fr        #
+#    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
+#    Updated: 2021/06/12 22:30:43 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = cub3D
+
+NAME = fractol
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -21,35 +22,7 @@ LIBFT_LIB = $(LIBFT_DIR)/libft.a
 LIBS = -lXext -lX11
 MLX_DIR = ./minilibx-linux
 
-SRCS = srcs/cub3d.c \
-		srcs/get_next_line.c \
-		srcs/get_next_line_utils.c \
-		srcs/init.c \
-		srcs/init2.c \
-		srcs/exit.c \
-		srcs/parse_line.c \
-		srcs/parse_element.c \
-		srcs/parse_element2.c \
-		srcs/parse_map.c \
-		srcs/parse_map2.c \
-		srcs/flood_fill.c \
-		srcs/utils.c \
-		srcs/utils2.c \
-		srcs/get_info_from_map.c \
-		srcs/set_player_info.c \
-		srcs/load_texture.c \
-		srcs/init_mlx.c \
-		srcs/init_mlx2.c \
-		srcs/event_key.c \
-		srcs/move.c \
-		srcs/turn.c \
-		srcs/ray_casting.c \
-		srcs/floor_and_ceilling_casting.c \
-		srcs/wall_casting.c \
-		srcs/wall_casting2.c \
-		srcs/sprite_casting.c \
-		srcs/sprite_casting2.c \
-		srcs/bmp.c \
+SRCS = srcs/main.c \
 
 OBJCS = $(SRCS:%.c=%.o)
 
@@ -67,12 +40,12 @@ $(NAME): $(OBJCS)
 clean:
 		$(MAKE) -C $(LIBFT_DIR) clean
 		$(MAKE) -C $(MLX_DIR) clean
-		$(RM) $(OBJCS) cub3d.bmp
+		$(RM) $(OBJCS)
 
 fclean: clean
 		$(MAKE) -C $(LIBFT_DIR) fclean
 		$(RM) $(OBJCS)
-		$(RM) $(NAME) ./libmlx_Linux.a ./cu3d.bmp
+		$(RM) $(NAME) ./libmlx_Linux.a
 
 re: fclean all
 
