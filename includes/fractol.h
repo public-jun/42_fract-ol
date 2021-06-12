@@ -6,8 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/12 22:43:53 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/12 23:05:36 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../minilibx-linux/mlx.h"
+#ifndef FRACTOL_H
+# define FRACTOL_H
+
+#include "../minilibx-linux/mlx.h"
+
+#endif
