@@ -6,23 +6,12 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/23 12:30:37 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/23 15:07:11 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
-#include <stdio.h>
 // #include <float.h>
-
-typedef struct s_data
-{
-  void *img;
-  int *addr;
-  int bits_per_piexel;
-  int line_len;
-  int endian;
-  int buf[180][180];
-} t_data;
 
 void ft_draw_to_window(t_data *data, void *mlx, void *win)
 {
@@ -48,41 +37,6 @@ void  set_pixel_mandelbrot(int x, int y, t_data *data)
   data->buf[y][x] = 0x00FFFF00;
 }
 
-void  calc_mandelbrot(t_data *data)
-{
-// size = 4;                                // 描く領域の一辺の長さ
-// pixel = 100;                             // 描く領域の一辺のピクセル数
-  int len_per_size = 4;
-  int pixel = 180;
-  long double x,y;
-  long double a, b;
-  long double tmp_a, tmp_b;
-
-  for (int i = 0; i < pixel; i++)
-  {
-    x = i * len_per_size / pixel - len_per_size / 2;
-    for (int j = 0; j < pixel; j++)
-    {
-      y = j * len_per_size / pixel - len_per_size / 2;
-      a = 0;
-      b = 0;
-      for (int k = 0; k < 20; k++)
-      {
-        tmp_a = pow(a, 2)- pow(b, 2) + x; 
-        tmp_b = 2 * a * b + y;
-        a = tmp_a;
-        b = tmp_b;
-        if (a * a + b * b > 4)
-        {
-          set_pixel_mandelbrot(j, i, data);
-          break;
-        }
-      }
-    }
-  }
-}
-
-  
 // for (i = 0; pixel > i; i++) {            // x（実部）方向のループ
 //     x = i * size / pixel - size / 2;     // 定数Cの実部
 //     for (j = 0; pixel > j; j++) {        // y（虚部）方向のループ
@@ -102,7 +56,7 @@ void  calc_mandelbrot(t_data *data)
 //     }
 // }
 
-void  create_circle(t_data *data)
+void  calc_mandelbrot(t_data *data)
 {
   long double a, b;
   long double i, j;
@@ -142,8 +96,7 @@ int main(int ac, char **av)
   data.img = mlx_new_image(mlx, 180, 180);
   data.addr = (int *)mlx_get_data_addr(data.img, &data.bits_per_piexel, &data.line_len, &data.endian);
 
-  // calc_mandelbrot(&data);
-  create_circle(&data);
+  calc_mandelbrot(&data);
 
   ft_draw_to_window(&data, mlx, win);
   mlx_loop(mlx);
