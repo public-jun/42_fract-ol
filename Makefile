@@ -19,15 +19,17 @@ CC = gcc
 LIBFT_DIR = ./libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 
-LIBS = -lmlx -lXext -lX11 -lm
 MLX_DIR = ./minilibx-linux
+MLX_LIB = libmlx_Linux.a
+
+LIBS = -lmlx_Linux -lXext -lX11 -lm
 
 SRCS =	srcs/main.c \
 		# srcs/load_info_from_parameters.c
 
 OBJCS = $(SRCS:%.c=%.o)
 
-INCLUDE = -I ./includes
+INCLUDE = -I ./includes -Iminilibx-linux
 
 RM = rm -f
 
@@ -35,7 +37,7 @@ all: $(NAME)
 
 $(NAME): $(OBJCS) $(LIBFT_LIB)
 		$(MAKE) -C $(MLX_DIR)
-		cp $(MLX_DIR)/libmlx.a .
+		cp $(MLX_DIR)/$(MLX_LIB) .
 		$(CC) $(CFLAGS) $(OBJCS) -Lminilibx-linux $(LIBS) $(LIBFT_LIB) $(INCLUDE) -o $(NAME)
 
 $(LIBFT_LIB):	
@@ -52,7 +54,7 @@ clean:
 fclean: clean
 		$(MAKE) -C $(LIBFT_DIR) fclean
 		$(RM) $(OBJCS)
-		$(RM) $(NAME) ./libmlx.a
+		$(RM) $(NAME) $(MLX_LIB)
 
 re: fclean all
 
