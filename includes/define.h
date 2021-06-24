@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 07:09:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/24 06:12:23 by jnakahod         ###   ########.fr       */
+/*   Created: 2021/06/24 05:25:05 by jnakahod          #+#    #+#             */
+/*   Updated: 2021/06/24 05:44:36 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fractol.h>
+#ifndef DEFINE_H
+# define DEFINE_H
 
-void    ft_exit(t_all *all)
-{
-    if (all->win)
-        mlx_destroy_window(all->mlx, all->win);
-    if (all->data.img)
-        mlx_destroy_image(all->mlx, all->data.img);
-    if (all->mlx)
-    {
-        mlx_destroy_display(all->mlx);
-        free(all->mlx);
-    }
-    exit(0);
-}
+# define KEYPRESS 2
+# define KEYPRESSMASK 1L << 0
+
+#endif

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   key_linux.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 07:09:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/24 06:12:23 by jnakahod         ###   ########.fr       */
+/*   Created: 2021/06/24 06:03:12 by jnakahod          #+#    #+#             */
+/*   Updated: 2021/06/24 06:04:02 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fractol.h>
+#ifndef KEY_LINUX_H
+# define KEY_LINUX_H
 
-void    ft_exit(t_all *all)
-{
-    if (all->win)
-        mlx_destroy_window(all->mlx, all->win);
-    if (all->data.img)
-        mlx_destroy_image(all->mlx, all->data.img);
-    if (all->mlx)
-    {
-        mlx_destroy_display(all->mlx);
-        free(all->mlx);
-    }
-    exit(0);
-}
+# define K_UP 65362
+# define K_DOWN 65364
+# define K_LEFT 65361
+# define K_RIGHT 65363
+# define K_ESC 65307
+
+#endif
