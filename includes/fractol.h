@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/23 15:06:47 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/24 06:15:14 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,26 @@
 
 #include "../minilibx-linux/mlx.h"
 #include <math.h>
+#include <stdlib.h>
 #include <struct.h>
+#include <define.h>
+#include <key_linux.h>
+
+
+/*
+** init.c
+*/
+void    ft_init(t_all *all);
+
+/*
+** exit.c
+*/
+void    ft_exit(t_all *all);
+
+/*
+** event_key.c
+*/
+int key_press(int key, t_all *all);
 
 /*
 ** load_info_from_parameters.c

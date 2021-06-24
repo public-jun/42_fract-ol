@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/06/22 09:14:33 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/06/24 06:16:45 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ MLX_LIB = libmlx_Linux.a
 LIBS = -lmlx_Linux -lXext -lX11 -lm
 
 SRCS =	srcs/main.c \
+		srcs/init.c \
+		srcs/exit.c \
+		srcs/event_key.c 
 		# srcs/load_info_from_parameters.c
 
 OBJCS = $(SRCS:%.c=%.o)
@@ -60,5 +63,8 @@ re: fclean all
 
 test:
 		$(CC) -g $(CFLAGS) $(SRCS) -Lminilibx-linux $(LIBS) $(LIBFT_LIB) $(INCLUDE) -o $(NAME)
+
+valgrind: test
+	valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=666 ./$(NAME)
 
 .PHONY: all clean fclean re test

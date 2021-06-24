@@ -6,35 +6,35 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/23 15:07:11 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/24 06:00:58 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 // #include <float.h>
 
-void ft_draw_to_window(t_data *data, void *mlx, void *win)
+void ft_draw_to_window(t_all *all, t_data *data)
 {
-  int x;
-  int y;
+    int x;
+    int y;
 
-  y = 0;
-  while (y < 180)
-  {
-    x = 0;
-    while (x < 180)
+    y = 0;
+    while (y < 180)
     {
-      data->addr[(data->line_len / (data->bits_per_piexel / 8)) * y + x] = data->buf[y][x];
-      x++;
+        x = 0;
+        while (x < 180)
+        {
+            data->addr[(data->size_l / (data->bpp / 8)) * y + x] = all->buf[y][x];
+            x++;
+        }
+        y++;
     }
-    y++;
-  }
-  mlx_put_image_to_window(mlx, win, data->img, 0, 0);
+    mlx_put_image_to_window(all->mlx, all->win, data->img, 0, 0);
 }
 
-void  set_pixel_mandelbrot(int x, int y, t_data *data)
+void set_pixel_mandelbrot(int x, int y, t_all *all)
 {
-  data->buf[y][x] = 0x00FFFF00;
+    all->buf[y][x] = 0x00FFFF00;
 }
 
 // for (i = 0; pixel > i; i++) {            // x（実部）方向のループ
@@ -56,50 +56,50 @@ void  set_pixel_mandelbrot(int x, int y, t_data *data)
 //     }
 // }
 
-void  calc_mandelbrot(t_data *data)
+void calc_mandelbrot(t_all *all)
 {
-  long double a, b;
-  long double i, j;
-  long double tmp_i, tmp_j;
-  for (int y = 0; y < 180; y++)
-  {
-    b = (double)y * 3 / 180 - 1.5;
-    for(int x = 0; x < 180; x++)
+    long double a, b;
+    long double i, j;
+    long double tmp_i, tmp_j;
+    for (int y = 0; y < 180; y++)
     {
-      a = (double)x * 3 / 180 - 1.5;
-      i = 0;
-      j = 0;
-      for (int k = 0; 50 > k; k++)
-      {
-        tmp_i = i * i - j * j + a; 
-        tmp_j = 2 * i * j + b;
-        i = tmp_i;
-        j = tmp_j;
-        if (pow(i, 2) + pow(j, 2) > 4)
+        b = (double)y * 3 / 180 - 1.5;
+        for (int x = 0; x < 180; x++)
         {
-          set_pixel_mandelbrot(x, y, data);
-          break;
+            a = (double)x * 3 / 180 - 1.5;
+            i = 0;
+            j = 0;
+            for (int k = 0; 50 > k; k++)
+            {
+                tmp_i = i * i - j * j + a;
+                tmp_j = 2 * i * j + b;
+                i = tmp_i;
+                j = tmp_j;
+                if (pow(i, 2) + pow(j, 2) > 4)
+                {
+                    set_pixel_mandelbrot(x, y, all);
+                    break;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 int main(int ac, char **av)
 {
-  void *mlx;
-  void *win;
-  t_data data;
+    t_all all;
 
-  mlx = mlx_init();
-  win = mlx_new_window(mlx, 180, 180, "fractol");
-  data.img = mlx_new_image(mlx, 180, 180);
-  data.addr = (int *)mlx_get_data_addr(data.img, &data.bits_per_piexel, &data.line_len, &data.endian);
+    ft_init(&all);
+    all.mlx = mlx_init();
+    all.win = mlx_new_window(all.mlx, 180, 180, "fractol");
+    all.data.img = mlx_new_image(all.mlx, 180, 180);
+    all.data.addr = (int *)mlx_get_data_addr(all.data.img, &all.data.bpp, &all.data.size_l, &all.data.endian);
 
-  calc_mandelbrot(&data);
+    calc_mandelbrot(&all);
 
-  ft_draw_to_window(&data, mlx, win);
-  mlx_loop(mlx);
-  // load_info_from_parameters(ac, av);
-  return (0);
+    ft_draw_to_window(&all, &all.data);
+    mlx_hook(all.win, KEYPRESS, KEYPRESSMASK, &key_press, &all);
+    mlx_loop(all.mlx);
+    // load_info_from_parameters(ac, av);
+    return (0);
 }
