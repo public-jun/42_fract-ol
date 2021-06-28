@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/06/24 06:16:45 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/06/25 07:30:35 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIBS = -lmlx_Linux -lXext -lX11 -lm
 SRCS =	srcs/main.c \
 		srcs/init.c \
 		srcs/exit.c \
-		srcs/event_key.c 
+		srcs/event.c 
 		# srcs/load_info_from_parameters.c
 
 OBJCS = $(SRCS:%.c=%.o)
