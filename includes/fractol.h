@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/24 06:15:14 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/25 15:30:57 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include "../minilibx-linux/mlx.h"
 #include <math.h>
+#include <float.h>
+#include <unistd.h>
+#include <errno.h>
 #include <stdlib.h>
 #include <struct.h>
 #include <define.h>
@@ -34,7 +37,8 @@ void    ft_exit(t_all *all);
 /*
 ** event_key.c
 */
-int key_press(int key, t_all *all);
+int ft_key_press(int key, t_all *all);
+int ft_zoom_on(int key, int x,  int y, t_all *all);
 
 /*
 ** load_info_from_parameters.c

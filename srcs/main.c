@@ -6,12 +6,11 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/24 06:00:58 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:44:09 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
-// #include <float.h>
 
 void ft_draw_to_window(t_all *all, t_data *data)
 {
@@ -63,26 +62,36 @@ void calc_mandelbrot(t_all *all)
     long double tmp_i, tmp_j;
     for (int y = 0; y < 180; y++)
     {
-        b = (double)y * 3 / 180 - 1.5;
+        b = (long double)y * all->coordinate_len / all->win_size - (all->coordinate_len / (long  double)2);
         for (int x = 0; x < 180; x++)
         {
-            a = (double)x * 3 / 180 - 1.5;
+            a = (long double)x * all->coordinate_len / all->win_size - (all->coordinate_len / (long double)2);
             i = 0;
             j = 0;
-            for (int k = 0; 50 > k; k++)
+            for (int k = 0; 60 > k; k++)
             {
                 tmp_i = i * i - j * j + a;
                 tmp_j = 2 * i * j + b;
                 i = tmp_i;
                 j = tmp_j;
-                if (pow(i, 2) + pow(j, 2) > 4)
+                if (abs(i + j) > 2)
                 {
                     set_pixel_mandelbrot(x, y, all);
                     break;
                 }
+                else if (k == 59)
+                    all->buf[y][x] = 0x00000000;
             }
         }
     }
+}
+
+int    ft_main_loop(t_all *all)
+{
+    //calc
+    calc_mandelbrot(all);
+    //draw
+    ft_draw_to_window(all, &all->data);
 }
 
 int main(int ac, char **av)
@@ -95,10 +104,16 @@ int main(int ac, char **av)
     all.data.img = mlx_new_image(all.mlx, 180, 180);
     all.data.addr = (int *)mlx_get_data_addr(all.data.img, &all.data.bpp, &all.data.size_l, &all.data.endian);
 
-    calc_mandelbrot(&all);
+    all.coordinate_len = 3.0;
+    all.win_size  = 180;
+    
+    errno = 0;
+    mlx_loop_hook(all.mlx, &ft_main_loop, &all);
 
-    ft_draw_to_window(&all, &all.data);
-    mlx_hook(all.win, KEYPRESS, KEYPRESSMASK, &key_press, &all);
+    mlx_hook(all.win, KEYPRESS, KEYPRESSMASK, &ft_key_press, &all);
+    mlx_hook(all.win, BUTTONPRESS, BUTTONPRESSMASK, &ft_zoom_on, &all);
+    // mlx_mouse_show(all.mlx, all.win);
+    // mlx_mouse_move(all.mlx, all.win, 20, 20);
     mlx_loop(all.mlx);
     // load_info_from_parameters(ac, av);
     return (0);
