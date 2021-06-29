@@ -6,7 +6,11 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2021/06/29 16:16:54 by jnakahod         ###   ########.fr        #
+=======
+#    Updated: 2021/06/25 07:30:35 by jnakahod         ###   ########.fr        #
+>>>>>>> 5fe25003709731ac7c45b6d6960d5c9bb384fee2
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +52,7 @@ endif
 SRCS =	srcs/main.c \
 		srcs/init.c \
 		srcs/exit.c \
-		srcs/event_key.c 
+		srcs/event.c 
 		# srcs/load_info_from_parameters.c
 
 OBJCS = $(SRCS:%.c=%.o)
