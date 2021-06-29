@@ -6,14 +6,14 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/24 06:15:14 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:12:46 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#include "../minilibx-linux/mlx.h"
+#include "../minilibx_mms_20200219/mlx.h"
 #include <math.h>
 #include <stdlib.h>
 #include <struct.h>
