@@ -6,11 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2021/06/29 16:16:54 by jnakahod         ###   ########.fr        #
-=======
-#    Updated: 2021/06/25 07:30:35 by jnakahod         ###   ########.fr        #
->>>>>>> 5fe25003709731ac7c45b6d6960d5c9bb384fee2
+#    Updated: 2021/06/29 17:16:45 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +40,7 @@ ifeq ($(PLATFORM), MACOS)
 	MLX_LIB := libmlx.dylib
 	MLX_DIR := ./minilibx_mms_20200219
 	#MINILIB_DIR := minilibx_opengl_20191021
-	LIBS := libmlx.dylib -framework OpenGL -framework Appkit
+	LIBS := libmlx.dylib -framework OpenGL -framework Appkit -lm
 	#LIBS := -L minilibx_opengl_20191021 -lmlx -framework OpenGL -framework Appkit
 endif
 

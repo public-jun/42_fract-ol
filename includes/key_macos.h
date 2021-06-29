@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_linux.h                                        :+:      :+:    :+:   */
+/*   key_macos.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: jnakahod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 06:03:12 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/29 17:24:49 by jnakahod         ###   ########.fr       */
+/*   Created: 2021/06/29 17:25:02 by jnakahod          #+#    #+#             */
+/*   Updated: 2021/06/29 17:25:59 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KEY_LINUX_H
-# define KEY_LINUX_H
+#ifndef KEY_MAXOS_H
+# define KEY_MAXOS_H
 
-# define K_UP 65362
-# define K_DOWN 65364
-# define K_LEFT 65361
-# define K_RIGHT 65363
-
-# define K_ESC 65307
-
-//# define K_ESC 53
+# define ESC 53
 
 #endif
