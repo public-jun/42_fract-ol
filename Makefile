@@ -31,7 +31,7 @@ endif
 ifeq ($(PLATFORM), LINUX)
 	INCLUDE = -I ./includes -Iminilibx-linux
 	MLX_LIB := libmlx_Linux.a
-	MLX_DIR := ./minilibx_linux
+	MLX_DIR := ./minilibx-linux
 	LIBS = -lmlx_Linux -lXext -lX11 -lm
 endif
 
