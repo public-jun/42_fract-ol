@@ -6,14 +6,15 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/29 17:16:09 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/30 08:05:19 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#include "../minilibx_mms_20200219/mlx.h"
+// #include "../minilibx_mms_20200219/mlx.h"
+ #include "../minilibx-linux/mlx.h"
 #include <math.h>
 #include <float.h>
 #include <unistd.h>
@@ -28,6 +29,7 @@
 ** init.c
 */
 void    ft_init(t_all *all);
+void    ft_coordinate_init(t_all *all);
 
 /*
 ** exit.c

@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 07:09:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/29 16:22:43 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/30 06:16:12 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void    ft_exit(t_all *all)
         mlx_destroy_image(all->mlx, all->data.img);
     if (all->mlx)
     {
-        //mlx_destroy_display(all->mlx);
+        mlx_destroy_display(all->mlx);
         free(all->mlx);
     }
     exit(0);

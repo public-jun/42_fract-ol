@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 05:25:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/25 08:07:03 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/30 08:04:26 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # define BUTTONPRESSMASK 1L << 2
 
 /*
-** key code
+** window size
 */
-# define WHEEL_UP 4
-# define WHEEL_DOWN 5
+# define WIDTH 180
+# define HEIGHT 180
 #endif

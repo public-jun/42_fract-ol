@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/28 07:44:09 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/30 08:03:49 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,15 @@ void set_pixel_mandelbrot(int x, int y, t_all *all)
 
 void calc_mandelbrot(t_all *all)
 {
-    long double a, b;
-    long double i, j;
-    long double tmp_i, tmp_j;
+    double a, b;
+    double i, j;
+    double tmp_i, tmp_j;
     for (int y = 0; y < 180; y++)
     {
-        b = (long double)y * all->coordinate_len / all->win_size - (all->coordinate_len / (long  double)2);
+        b = (double)y * (all->end_im - all->start_im) / all->win_size + all->start_im;
         for (int x = 0; x < 180; x++)
         {
-            a = (long double)x * all->coordinate_len / all->win_size - (all->coordinate_len / (long double)2);
+            a = (double)x * (all->end_re - all->start_re) / all->win_size + all->start_re;
             i = 0;
             j = 0;
             for (int k = 0; 60 > k; k++)
@@ -99,10 +99,10 @@ int main(int ac, char **av)
     t_all all;
 
     ft_init(&all);
-    all.mlx = mlx_init();
-    all.win = mlx_new_window(all.mlx, 180, 180, "fractol");
-    all.data.img = mlx_new_image(all.mlx, 180, 180);
-    all.data.addr = (int *)mlx_get_data_addr(all.data.img, &all.data.bpp, &all.data.size_l, &all.data.endian);
+    // all.mlx = mlx_init();
+    // all.win = mlx_new_window(all.mlx, 180, 180, "fractol");
+    // all.data.img = mlx_new_image(all.mlx, 180, 180);
+    // all.data.addr = (int *)mlx_get_data_addr(all.data.img, &all.data.bpp, &all.data.size_l, &all.data.endian);
 
     all.coordinate_len = 3.0;
     all.win_size  = 180;
