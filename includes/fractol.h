@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 15:40:49 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/30 16:16:58 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ void    load_info_from_parameters(int ac, char **av, t_all *all);
 ** set_mandelbrot.c
 */
 void set_pixel_mandelbrot(int x, int y, t_all *all);
+void set_pixel_julia(int x, int y, t_all *all);
 
 #endif
