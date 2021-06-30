@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 08:05:19 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/06/30 15:40:49 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // #include "../minilibx_mms_20200219/mlx.h"
  #include "../minilibx-linux/mlx.h"
+#include <libft.h>
 #include <math.h>
 #include <float.h>
 #include <unistd.h>
@@ -45,6 +46,11 @@ int ft_zoom_on(int key, int x,  int y, t_all *all);
 /*
 ** load_info_from_parameters.c
 */
-// void    load_info_from_parameters(int ac, char **av);
+void    load_info_from_parameters(int ac, char **av, t_all *all);
+
+/*
+** set_mandelbrot.c
+*/
+void set_pixel_mandelbrot(int x, int y, t_all *all);
 
 #endif

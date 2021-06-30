@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/06/29 17:16:45 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/06/30 15:40:30 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME := fractol
 
 CC = gcc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = ./libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
@@ -29,7 +29,7 @@ ifeq ($(UNAME_S), Darwin)
 endif
 
 ifeq ($(PLATFORM), LINUX)
-	INCLUDE = -I ./includes -Iminilibx-linux
+	INCLUDE = -I ./includes -Iminilibx-linux -Ilibft
 	MLX_LIB := libmlx_Linux.a
 	MLX_DIR := ./minilibx-linux
 	LIBS = -lmlx_Linux -lXext -lX11 -lm
@@ -48,11 +48,11 @@ endif
 SRCS =	srcs/main.c \
 		srcs/init.c \
 		srcs/exit.c \
-		srcs/event.c 
-		# srcs/load_info_from_parameters.c
+		srcs/event.c \
+		srcs/set_mandelbrot.c \
+		srcs/load_info_from_parameters.c
 
 OBJCS = $(SRCS:%.c=%.o)
-
 
 RM = rm -f
 
