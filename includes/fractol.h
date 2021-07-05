@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 11:50:38 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 13:20:51 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,13 @@ double  *ft_atof(char *str);
 ** set_mandelbrot.c
 */
 void set_pixel_mandelbrot(int x, int y, t_all *all);
+int ft_update_color_of_mandelbrot(int x, int y, t_all *all);
 
 /*
 ** set_julia.c
 */
 void set_pixel_julia(int x, int y, t_all *all);
-int ft_update_constant_of_julia(int x, int y, t_all *s_all);
+int ft_update_constant_of_julia(int x, int y, t_all *all);
 
 /*
 ** utils.c

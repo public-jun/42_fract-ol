@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 10:16:55 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 10:19:19 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:47:46 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,19 @@ static int calc_mandelbrot(int x, int y, t_all *all)
     return (i);
 }
 
+int ft_update_color_of_mandelbrot(int x, int y, t_all *all)
+{
+    all->color_shift = x + y;
+   return (1);
+}
+
 void set_pixel_mandelbrot(int x, int y, t_all *all)
 {
     int count_calc;
     int color;
 
     count_calc = calc_mandelbrot(x, y, all);
-    color = count_calc * 10000 + x + y;
+    color = count_calc * 10000 + all->color_shift;
     if (count_calc == MAXCALC)
         all->buf[y][x] = 0x00000000;
     else

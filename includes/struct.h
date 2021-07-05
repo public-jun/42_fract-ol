@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 15:04:57 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 12:43:11 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:46:03 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_all
     double  constant_imaginary_num;
     int     type_fractol;
     int     flag_cursor_effect;
+    int     color_shift;
 } t_all;
 
 #endif

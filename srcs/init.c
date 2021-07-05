@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 05:12:24 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 15:46:57 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:47:20 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ void    ft_coordinate_init(t_all *all)
     all->start_im = -1.5;
     all->end_re = 1.5;
     all->end_im = 1.5;
+}
+
+static void    ft_color_init(t_all *all)
+{
+    all->color_shift = 0;
 }
 
 void    ft_init_win(t_all *all)
@@ -50,5 +55,6 @@ void    ft_init(t_all *all)
 {
     ft_key_init(all);
     ft_coordinate_init(all);
+    ft_color_init(all);
     ft_init_win(all);
 }
