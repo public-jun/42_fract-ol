@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 05:25:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 11:14:28 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 11:27:09 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define KEYPRESSMASK 1L << 0
 # define BUTTONPRESS 4
 # define BUTTONPRESSMASK 1L << 2
+# define MOTIONNOTIFY 6
+# define POINTERMOTIONMASK 1L << 6 
 
 /*
 ** window size

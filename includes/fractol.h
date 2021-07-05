@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 16:16:58 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 06:07:43 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <struct.h>
 #include <define.h>
 #include <key_linux.h>
@@ -47,11 +48,17 @@ int ft_zoom_on(int key, int x,  int y, t_all *all);
 ** load_info_from_parameters.c
 */
 void    load_info_from_parameters(int ac, char **av, t_all *all);
+double  *ft_atof(char *str);
 
 /*
 ** set_mandelbrot.c
 */
 void set_pixel_mandelbrot(int x, int y, t_all *all);
 void set_pixel_julia(int x, int y, t_all *all);
+
+/*
+** utils.c
+*/
+double *ft_atof(char *str);
 
 #endif

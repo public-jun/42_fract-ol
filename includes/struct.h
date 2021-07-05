@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 15:04:57 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 10:35:58 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 06:10:03 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct s_all
     double  start_im;
     double  end_re;
     double  end_im;
+    double  constant_real_num;
+    double  constant_imaginary_num;
     int     type_fractol;
 } t_all;
 

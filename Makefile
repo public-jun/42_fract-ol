@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/06/30 16:17:28 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/07/02 11:52:56 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRCS =	srcs/main.c \
 		srcs/event.c \
 		srcs/set_mandelbrot.c \
 		srcs/set_julia.c \
-		srcs/load_info_from_parameters.c
+		srcs/load_info_from_parameters.c \
+		srcs/utils.c
 
 OBJCS = $(SRCS:%.c=%.o)
 
