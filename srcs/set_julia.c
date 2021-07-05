@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:29:28 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 06:05:57 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 11:56:05 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ static int  calc_julia(int x, int y, t_all *all)
         i++;
     }
     return (i);
+}
+
+int ft_update_constant_of_julia(int x, int y, t_all *all)
+{
+    all->constant_real_num = ((double)x / WIDTH) * (all->end_re - all->start_re) + all->start_re;
+    all->constant_imaginary_num = ((double)y / HEIGHT) * (all->end_im - all->start_im) + all->start_im;
+    return (0);
 }
 
 void    set_pixel_julia(int x, int y, t_all *all)

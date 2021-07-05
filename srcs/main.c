@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 11:34:22 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 13:15:09 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ int main(int ac, char **av)
     mlx_loop_hook(all.mlx, &ft_main_loop, &all);
     mlx_hook(all.win, KEYPRESS, KEYPRESSMASK, &ft_key_press, &all);
     mlx_hook(all.win, BUTTONPRESS, BUTTONPRESSMASK, &ft_zoom_on, &all);
-    // mlx_mouse_show(all.mlx, all.win);
-    // mlx_mouse_move(all.mlx, all.win, 20, 20);
+    if (all.type_fractol == JULIA && all.flag_cursor_effect == ON)
+        mlx_hook(all.win, MOTIONNOTIFY, POINTERMOTIONMASK, &ft_update_constant_of_julia, &all);
+    if (all.type_fractol == MANDELBROT && all.flag_cursor_effect == ON)
+        mlx_hook(all.win, MOTIONNOTIFY, POINTERMOTIONMASK, &ft_update_color_of_mandelbrot, &all);
     mlx_loop(all.mlx);
     return (0);
 }

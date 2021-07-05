@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 05:25:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 11:27:09 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 12:46:14 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 */
 # define MANDELBROT 1
 # define JULIA 2
+
+/*
+** flag on off
+*/
+# define OFF 0
+# define ON 1
 
 /*
 ** event & mask
