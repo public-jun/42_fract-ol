@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 13:15:09 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:56:14 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ int main(int ac, char **av)
 {
     t_all all;
 
-    (void)ac;
-    (void)av;
     load_info_from_parameters(ac, av, &all);
     ft_init(&all);
     mlx_loop_hook(all.mlx, &ft_main_loop, &all);

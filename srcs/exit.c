@@ -6,11 +6,33 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 07:09:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/06/30 06:16:12 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 10:45:10 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
+
+void    print_err_message(void)
+{
+    ft_putstr_fd("\x1b[31m", 2);
+    ft_putstr_fd("ERROR\n", 2);
+    ft_putstr_fd("\x1b[0m", 2);
+    ft_putstr_fd("\x1b[1m\tWrong input\n\n", 2);
+    ft_putstr_fd("\x1b[0m", 2);
+    ft_putstr_fd("\x1b[1margv[1]\x1b[0m", 2);
+    ft_putstr_fd(":Fractal name\n", 2);
+    ft_putstr_fd("\tjulia\n", 2);
+    ft_putstr_fd("\tmandelbrot\n", 2);
+    ft_putstr_fd("\n\x1b[1margv[2]\x1b[0m", 2);
+    ft_putstr_fd(":Cursor effect \n", 2);
+    ft_putstr_fd("\tplain\n", 2);
+    ft_putstr_fd("\tdynamic\n", 2);
+    ft_putstr_fd("\n\x1b[1margv[3]\x1b[0m", 2);
+    ft_putstr_fd(":Real number by julia \n", 2);
+    ft_putstr_fd("\n\x1b[1margv[4]\x1b[0m", 2);
+    ft_putstr_fd(":Imaginary number by julia \n", 2);
+    exit(1);
+}
 
 void    ft_exit(t_all *all)
 {

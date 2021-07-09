@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 13:20:51 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/05 16:12:18 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 #include <struct.h>
 #include <define.h>
 #include <key_linux.h>
+#include <color.h>
 
 
 /*
@@ -36,6 +37,7 @@ void    ft_coordinate_init(t_all *all);
 /*
 ** exit.c
 */
+void    print_err_message(void);
 void    ft_exit(t_all *all);
 
 /*
