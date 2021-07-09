@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 07:09:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/09 15:22:04 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:39:34 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    print_err_message(void)
     exit(1);
 }
 
-void    ft_exit(t_all *all)
+int    ft_exit(t_all *all)
 {
     if (all->win)
         mlx_destroy_window(all->mlx, all->win);
@@ -47,4 +47,5 @@ void    ft_exit(t_all *all)
         free(all->mlx);
     }
     exit(0);
+    return (0);
 }

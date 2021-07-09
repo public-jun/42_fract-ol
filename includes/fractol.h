@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/09 15:16:21 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:39:20 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void    ft_coordinate_init(t_all *all);
 ** exit.c
 */
 void    print_err_message(void);
-void    ft_exit(t_all *all);
+int    ft_exit(t_all *all);
 
 /*
 ** event_key.c

@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/09 14:58:43 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:37:39 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main(int ac, char **av)
     mlx_loop_hook(all.mlx, &ft_main_loop, &all);
     mlx_hook(all.win, KEYPRESS, KEYPRESSMASK, &ft_key_press, &all);
     mlx_hook(all.win, BUTTONPRESS, BUTTONPRESSMASK, &ft_zoom_on, &all);
+    mlx_hook(all.win, 33, 1L << 17, &ft_exit, &all);
     if (all.type_fractol == JULIA && all.flag_cursor_effect == ON)
         mlx_hook(all.win, MOTIONNOTIFY, POINTERMOTIONMASK, &ft_update_constant_of_julia, &all);
     if (all.type_fractol == MANDELBROT && all.flag_cursor_effect == ON)
