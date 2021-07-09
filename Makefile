@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/07/09 12:16:26 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/07/09 15:15:07 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRCS =	srcs/main.c \
 		srcs/exit.c \
 		srcs/event.c \
 		srcs/set_mandelbrot.c \
+		srcs/set_burningship.c \
 		srcs/set_julia.c \
 		srcs/load_info_from_parameters.c \
 		srcs/utils.c

@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 07:09:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/09 10:45:10 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:22:04 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void    print_err_message(void)
     ft_putstr_fd(":Fractal name\n", 2);
     ft_putstr_fd("\tjulia\n", 2);
     ft_putstr_fd("\tmandelbrot\n", 2);
+    ft_putstr_fd("\tburningship\n", 2);
     ft_putstr_fd("\n\x1b[1margv[2]\x1b[0m", 2);
     ft_putstr_fd(":Cursor effect \n", 2);
     ft_putstr_fd("\tplain\n", 2);

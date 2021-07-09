@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 15:56:14 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 14:58:43 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void    branch_by_fractol(int x, int y, t_all *all)
         set_pixel_mandelbrot(x, y, all);
     else if (all->type_fractol == JULIA)
         set_pixel_julia(x, y, all);
+    else if (all->type_fractol == BURNINGSHIP)
+        set_pixel_burningship(x, y, all);
 }
 
 void ft_draw_to_window(t_all *all, t_data *data)

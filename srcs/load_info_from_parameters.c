@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 06:18:34 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/09 11:53:24 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:19:58 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void set_fractal(char **av, t_all *all)
         all->type_fractol = MANDELBROT;
     else if (!ft_strncmp(av[1], "julia", 6))
         all->type_fractol = JULIA;
+    else if (!ft_strncmp(av[1], "burningship", 12))
+        all->type_fractol = BURNINGSHIP;
     else
         print_err_message();
 }
@@ -52,13 +54,9 @@ static void set_const_number(char **av, t_all *all)
     all->constant_real_num = -0.8;
     if (av[3] && all->type_fractol == JULIA)
         all->constant_real_num = get_const_number(av[3]);
-    else
-        print_err_message();
     all->constant_imaginary_num = 0.15;
     if (av[3] && av[4] && all->type_fractol == JULIA)
         all->constant_imaginary_num = get_const_number(av[4]);
-    else
-        print_err_message();
 }
 
 void    load_info_from_parameters(int ac, char **av, t_all *all)

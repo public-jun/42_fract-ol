@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 16:12:18 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:16:21 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ int ft_update_color_of_mandelbrot(int x, int y, t_all *all);
 */
 void set_pixel_julia(int x, int y, t_all *all);
 int ft_update_constant_of_julia(int x, int y, t_all *all);
+
+/*
+** set_burningship.c
+*/
+void    set_pixel_burningship(int x, int y, t_all *all);
 
 /*
 ** utils.c

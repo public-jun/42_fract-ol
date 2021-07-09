@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 05:25:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 12:46:14 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/09 14:07:54 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 */
 # define MANDELBROT 1
 # define JULIA 2
+# define BURNINGSHIP 3
 
 /*
 ** flag on off
