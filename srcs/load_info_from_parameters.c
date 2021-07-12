@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 06:18:34 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 05:41:50 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/12 08:49:56 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,18 @@ static void set_fractal(char **av, t_all *all)
 
 static void switch_cursor_effect(char **av, t_all *all)
 {
-    if (av[2] && !ft_strncmp(av[2], "plain", 6))
-        all->flag_cursor_effect = OFF;
-    else if (av[2] && !ft_strncmp(av[2], "dynamic", 8))
-        all->flag_cursor_effect = ON;
+    if (all->type_fractol == MANDELBROT || all->type_fractol == JULIA)
+    {
+        if (av[2] && !ft_strncmp(av[2], "plain", 6))
+            all->flag_cursor_effect = OFF;
+        else if (av[2] && !ft_strncmp(av[2], "dynamic", 8))
+            all->flag_cursor_effect = ON;
+        else
+            print_err_message();
+        return ;
+    }
+    if (all->type_fractol == BURNINGSHIP && !av[2])
+        return ;
     else
         print_err_message();
 }
