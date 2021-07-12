@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 06:18:34 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/09 15:19:58 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/12 05:41:50 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,4 @@ void    load_info_from_parameters(int ac, char **av, t_all *all)
     set_fractal(av, all);
     switch_cursor_effect(av, all);
     set_const_number(av, all);
-    printf("real = %f\n", all->constant_real_num);
-    printf("img  = %f\n", all->constant_imaginary_num);
 }

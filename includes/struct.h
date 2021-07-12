@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 15:04:57 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 15:46:03 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/12 07:49:11 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ typedef struct s_data
     int     endian;
 } t_data;
 
-typedef struct s_key
-{
-    int esc;
-} t_key;
-
 typedef struct s_complex
 {
     double x;
@@ -40,7 +35,6 @@ typedef struct s_all
     void    *mlx;
     void    *win;
     int     buf[HEIGHT][WIDTH];
-    t_key   key;
     t_data  data;
     double  start_re;
     double  start_im;

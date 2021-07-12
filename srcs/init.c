@@ -6,17 +6,11 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 05:12:24 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/05 15:47:20 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/12 07:49:00 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
-
-
-void    ft_key_init(t_all *all)
-{
-    all->key.esc = 0;
-}
 
 void    ft_coordinate_init(t_all *all)
 {
@@ -53,7 +47,6 @@ void    ft_init_win(t_all *all)
 
 void    ft_init(t_all *all)
 {
-    ft_key_init(all);
     ft_coordinate_init(all);
     ft_color_init(all);
     ft_init_win(all);
