@@ -27,7 +27,6 @@
 # include <struct.h>
 # include <define.h>
 # include <key_linux.h>
-# include <color.h>
 
 /*
 ** init.c
