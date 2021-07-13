@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:31:05 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 22:35:01 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/13 05:45:25 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_draw_to_window(t_all *all, t_data *data)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(all->mlx, all->win, data->img, 0, 0);
+	mlx_put_image_to_window(all->mlx, all->win, data->img);
 }
 
 int	ft_main_loop(t_all *all)

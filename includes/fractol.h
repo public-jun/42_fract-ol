@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:38:59 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 22:24:32 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/13 05:44:02 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*
 ** #include "../minilibx_mms_20200219/mlx.h"
 */
-# include "../minilibx-linux/mlx.h"
+# include <ft_mlx.h>
 # include <libft.h>
 # include <math.h>
 # include <float.h>
