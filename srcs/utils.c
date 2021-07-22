@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 05:29:50 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 21:30:37 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/22 13:28:37 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 static bool	is_double(char *str, int i)
 {
-	while (ft_isdigit(str[i]))
-		i++;
-	if (str[i] != '.')
+	if (str[i] == '.')
 		return (false);
-	i++;
 	while (ft_isdigit(str[i]))
 		i++;
-	if (str[i])
+	if (str[i] == '.' && str[i + 1])
+	{
+		i++;
+		while (ft_isdigit(str[i]))
+			i++;
+		if (str[i])
+			return (false);
+	}
+	else if (!str[i])
+		return (true);
+	else
 		return (false);
 	return (true);
 }
@@ -52,14 +59,18 @@ double	*ft_atof(char *str)
 	int		sign;
 	int		i;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	sign = 1;
-	if (str[i] == '-')
-		sign = -1;
 	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
+	}
 	if (is_double(str, i) == false)
 		return (NULL);
 	number = (double *)malloc(sizeof(double));
