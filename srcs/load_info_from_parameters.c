@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 06:18:34 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 21:27:23 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/20 14:46:26by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,10 @@ static double	get_const_number(char *num)
 	return (res);
 }
 
-static void	set_const_number(char **av, t_all *all)
+static void	set_const_number(char **av, int ac, t_all *all)
 {
+	if (ac > 3 && all->type_fractol == MANDELBROT)
+		print_err_message();
 	all->constant_real_num = -0.8;
 	if (av[3] && all->type_fractol == JULIA)
 		all->constant_real_num = get_const_number(av[3]);
@@ -72,5 +74,5 @@ void	load_info_from_parameters(int ac, char **av, t_all *all)
 		print_err_message();
 	set_fractal(av, all);
 	switch_cursor_effect(av, all);
-	set_const_number(av, all);
+	set_const_number(av, ac, all);
 }

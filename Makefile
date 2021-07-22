@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/07/13 06:53:19 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/07/20 14:59:57 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,9 +67,10 @@ fclean: clean
 re: fclean all
 
 test:
+		$(MAKE) -C $(LIBFT_DIR) bonus
 		$(CC) -g $(CFLAGS) $(SRCS) -L$(MLX_DIR) $(LIBS) $(LIBFT_LIB) $(INCLUDE) -o $(NAME)
 
 valgrind: test
-	valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=666 ./$(NAME) julia plain
+	valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=666 ./$(NAME) julia plain 0.1 0.2
 
 .PHONY: all clean fclean re test
