@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 06:01:24 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/23 05:09:50 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/23 13:28:35 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ static void	ft_move(int key, t_all *all)
 	else if (key == K_DOWN)
 	{
 		all->start_im = all->start_im
-			+ (all->end_im - all->start_im) * 10 / HEIGHT;
-		all->end_im = all->end_im + (all->end_im - all->start_im) * 10 / HEIGHT;
+			- (all->end_im - all->start_im) * 10 / HEIGHT;
+		all->end_im = all->end_im - (all->end_im - all->start_im) * 10 / HEIGHT;
 	}
 	else if (key == K_UP)
 	{
 		all->start_im = all->start_im
-			- (all->end_im - all->start_im) * 10 / HEIGHT;
-		all->end_im = all->end_im - (all->end_im - all->start_im) * 10 / HEIGHT;
+			+ (all->end_im - all->start_im) * 10 / HEIGHT;
+		all->end_im = all->end_im + (all->end_im - all->start_im) * 10 / HEIGHT;
 	}
 }
 
@@ -51,11 +51,19 @@ int	ft_key_press(int key, t_all *all)
 	return (0);
 }
 
-static double	set_mouse_cordinate(int n, int size, double start, double end)
+static double	set_mouse_x_cordinate(int n, int size, double start, double end)
 {
 	double	res;
 
 	res = ((double)n / size) * (end - start) + start;
+	return (res);
+}
+
+static double	set_mouse_y_cordinate(int n, int size, double start, double end)
+{
+	double	res;
+
+	res = -((double)n / size) * (end - start) + end;
 	return (res);
 }
 
@@ -64,8 +72,8 @@ int	ft_zoom_on(int key, int x, int y, t_all *all)
 	double	mouse_re;
 	double	mouse_im;
 
-	mouse_re = set_mouse_cordinate(x, WIDTH, all->start_re, all->end_re);
-	mouse_im = set_mouse_cordinate(y, HEIGHT, all->start_im, all->end_im);
+	mouse_re = set_mouse_x_cordinate(x, WIDTH, all->start_re, all->end_re);
+	mouse_im = set_mouse_y_cordinate(y, HEIGHT, all->start_im, all->end_im);
 	if (key == WHEEL_UP && (all->end_re - all->start_re) > 0.0000000001
 		&& (all->end_im - all->start_im) > 0.0000000001)
 	{

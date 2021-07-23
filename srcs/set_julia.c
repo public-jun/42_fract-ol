@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:29:28 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 21:29:54 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/23 13:22:35 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	calc_julia(int x, int y, t_all *all)
 
 	standard.x = (double)x * (all->end_re - all->start_re)
 		/ WIDTH + all->start_re;
-	standard.y = (double)y * (all->end_im - all->start_im)
-		/ HEIGHT + all->start_im;
+	standard.y = -(double)y * (all->end_im - all->start_im)
+		/ HEIGHT + all->end_im;
 	constant.x = all->constant_real_num;
 	constant.y = all->constant_imaginary_num;
 	i = 0;

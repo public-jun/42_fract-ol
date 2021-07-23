@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:02:38 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/07/12 21:28:58 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/07/23 12:58:48 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static int	calc_burningship(int x, int y, t_all *all)
 	standard.y = 0;
 	constant.x = (double)x * (all->end_re - all->start_re)
 		/ WIDTH + all->start_re;
-	constant.y = (double)y * (all->end_im - all->start_im)
-		/ HEIGHT + all->start_im;
+	constant.y = -(double)y * (all->end_im - all->start_im)
+		/ HEIGHT + all->end_im;
 	i = 0;
 	while (i < MAXCALC && abs(standard.x + standard.y) <= 2)
 	{
 		tmp.x = fabs(standard.x);
-		tmp.y = fabs(standard.y);
+		tmp.y = -fabs(standard.y);
 		standard.x = pow(tmp.x, 2) - pow(tmp.y, 2) + constant.x;
 		standard.y = 2 * tmp.x * tmp.y + constant.y;
 		i++;

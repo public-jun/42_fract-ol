@@ -47,6 +47,8 @@ static double	get_const_number(char *num)
 	double	*tmp;
 	double	res;
 
+	if (ft_strlen(num) > 20)
+		print_err_message();
 	tmp = ft_atof(num);
 	if (!tmp)
 		print_err_message();
