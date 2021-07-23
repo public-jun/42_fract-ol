@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/12 22:29:25 by jnakahod          #+#    #+#              #
-#    Updated: 2021/07/20 14:59:57 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/07/23 03:26:06 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,10 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJCS) $(LIBFT_LIB)
+$(MLX_DIR):
+	git clone https://github.com/42Paris/minilibx-linux.git $(MLX_DIR)
+
+$(NAME): $(MLX_DIR) $(OBJCS) $(LIBFT_LIB)
 		$(MAKE) -C $(MLX_DIR)
 		cp $(MLX_DIR)/$(MLX_LIB) .
 		$(CC) $(CFLAGS) $(OBJCS) -L$(MLX_DIR) $(LIBS) $(LIBFT_LIB) $(INCLUDE) -o $(NAME)
